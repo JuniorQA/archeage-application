@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style type="text/css">
+		*{
+			margin: 10px;
+			font-family: Tahoma;
+		}
+		.flex{
+			display: flex;
+		}
+		.justify-content-center{
+			justify-content: center;
+		}
+		.align-items-center{
+			align-items: center;
+		}
+		.flex-dir-col{
+			flex-direction: column;
+		}
+		.container{
+			width: 80%;
+			margin: 0 auto;
+		}
+		button, input[type=button]{
+			width: 200px;
+			height: 40px;
+			background-color: #18f27e;
+			border: 2px solid black;
+			border-radius: 9px;
+		}
+		body{
+			background-color: #F6F6F6;
+		}
+		.select-form{
+			min-width: 250px;
+			width: 50%;
+		}
+		.select {
+		  margin: 0 auto;
+		  text-align: center;
+		  display: block;
+		  width: 100%;
+		  height: calc(2.25rem + 2px);
+		  font-family: inherit;
+		  font-weight: 400;
+		  line-height: 1.5;
+		  color: #212529;
+		  background-color: #fff;
+		  background-clip: padding-box;
+		  border: 1px solid #bdbdbd;
+		  border-radius: 0.25rem;
+		  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		}
+		.custom-file-upload{
+			min-width: 250px;
+			border: 1px solid #ccc;
+		}
+		#file{
+			padding: 15px;
+		}
+	</style>
+	
+	<div class="container flex flex-dir-col align-items-center">	
+		<label for="file" class="custom-file-upload">
+	<input class="select" type="file" id="file" />
+		</label>
+		<div id="output"></div>
+		<div id="output2"></div>
+		<input type="button" value="создать новый купон" onclick="makeid()" /></br>
+		<input type="button" value="создать новый VIP-купон" onclick="makeVIPid()" /></br>
+		<form class="select-form" action="" name="server">
+		   <p><select class="select" name="server">
+		   <option>Выберите сервер</option>
+		   <option value="Кракен">Кракен</option>
+		   <option value="Ренессанс">Ренессанс</option>
+		   <option value="Другой сервер">Другой сервер</option>
+		   </select>
+	  	</form> 
+	  	<form class="select-form" action="" name="farm">
+		   <p><select class="select" name="farm">
+		   <option>Выберите фарм</option>
+		   <option value="Порт-Аргенто">Порт-Аргенто</option>
+		   <option value="Библиотека Эрнард">Библиотека Эрнард</option>
+		   <option value="Серебряные сундуки">Серебряные сундуки</option>
+		   <option value="Т1 свитки">Т1 свитки</option>
+		   <option value="Т2 свитки">Т2 свитки</option>
+		   <option value="рамиан шмотки">рамиан шмотки</option>
+		   <option value="Знаки культиста">Знаки культиста</option>
+		   <option value="Синие эссенки">Синие эссенки</option>
+		   <option value="Еженедельные кв">Еженедельные кв</option>
+		   <option value="Синие фрагменты для плаща">Синие фрагменты для плаща</option>
+		   <option value="Прокачка уровней">Прокачка уровней</option>
+		   <option value="Сады матери">Сады матери</option>
+		   <option value="Обмен на VIP">Обмен на VIP</option>
+		   <option value="Другое">Другое</option>
+		   </select>
+	  	</form>
+	  	<button onclick="makeIdUnused()">Сделать купон использованным</button></br>
+		<button onclick="checkForActiveId()">Проверить активен ли купон</button></br>
+		<button id="create" onclick="displayFile2()">Обновить и создать новый файл</button></br>
+		<a download="купоны.txt" id="downloadlink" style="display: none">Download</a>
+		</div>
+</div>
+</body>
+<script src="js/js.js"></script>
+</html>
